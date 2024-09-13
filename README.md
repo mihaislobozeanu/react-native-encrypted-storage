@@ -62,7 +62,7 @@ async function storeUserSession() {
             JSON.stringify({
                 age : 21,
                 token : "ACCESS_TOKEN",
-                username : "emeraldsanto",
+                username : "mihaislobozeanu",
                 languages : ["fr", "en", "de"]
             })
         );

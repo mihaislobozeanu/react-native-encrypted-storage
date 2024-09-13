@@ -1,4 +1,38 @@
 {
   "name": "EncryptedStorageExample",
-  "displayName": "EncryptedStorage Example"
+  "displayName": "EncryptedStorageExample",
+  "components": [
+    {
+      "appKey": "EncryptedStorageExample",
+      "displayName": "EncryptedStorageExample"
+    }
+  ],
+  "resources": {
+    "android": [
+      "dist/res",
+      "dist/main.android.jsbundle"
+    ],
+    "ios": [
+      "dist/assets",
+      "dist/main.ios.jsbundle"
+    ],
+    "macos": [
+      "dist/assets",
+      "dist/main.macos.jsbundle"
+    ],
+    "visionos": [
+      "dist/assets",
+      "dist/main.visionos.jsbundle"
+    ],
+    "windows": [
+      "dist/assets",
+      "dist/main.windows.bundle"
+    ]
+  },
+  "android": {
+    "package": "santinelareact.encryptedstorage.example"
+  },
+  "ios": {
+    "bundleIdentifier": "santinelareact.encryptedstorage.example"
+  }
 }

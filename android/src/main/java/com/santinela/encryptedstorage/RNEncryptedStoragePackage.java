@@ -1,4 +1,4 @@
-package com.emeraldsanto.encryptedstorage;
+package com.santinela.encryptedstorage;
 
 import com.facebook.react.ReactPackage;
 import com.facebook.react.bridge.NativeModule;

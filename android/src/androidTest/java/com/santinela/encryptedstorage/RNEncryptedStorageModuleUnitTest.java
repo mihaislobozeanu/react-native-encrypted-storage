@@ -1,9 +1,9 @@
-package com.emeraldsanto.encryptedstorage;
+package com.santinela.encryptedstorage;
 
 import androidx.test.ext.junit.runners.AndroidJUnit4;
 import androidx.test.platform.app.InstrumentationRegistry;
 import com.facebook.react.bridge.Promise;
-import com.facebook.react.bridge.ReactApplicationContext;
+import com.facebook.react.bridge.BridgeReactContext;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -17,7 +17,7 @@ public class RNEncryptedStorageModuleUnitTest {
 
     @Before
     public void setUp() {
-        module = new RNEncryptedStorageModule(new ReactApplicationContext(InstrumentationRegistry.getInstrumentation().getTargetContext()));
+        module = new RNEncryptedStorageModule(new BridgeReactContext(InstrumentationRegistry.getInstrumentation().getTargetContext()));
         module.clear(mock(Promise.class));
     }
 
@@ -80,7 +80,7 @@ public class RNEncryptedStorageModuleUnitTest {
         module.setItem("test", "asd", promise1);
         verify(promise1).resolve("asd");
 
-        module = new RNEncryptedStorageModule(new ReactApplicationContext(InstrumentationRegistry.getInstrumentation().getTargetContext()));
+        module = new RNEncryptedStorageModule(new BridgeReactContext(InstrumentationRegistry.getInstrumentation().getTargetContext()));
 
         Promise promise2 = mock(Promise.class);
         module.getItem("test", promise2);
