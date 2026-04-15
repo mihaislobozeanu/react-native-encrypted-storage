@@ -1,12 +1,17 @@
 {
   "name": "@santinela-react/encrypted-storage",
-  "version": "4.0.4",
+  "version": "5.0.0",
   "description": "A React Native wrapper over SharedPreferences and Keychain to provide a secure alternative to Async Storage",
   "source": "./src/index.ts",
   "main": "./lib/commonjs/index.js",
   "module": "./lib/module/index.js",
+  "browser": "./lib/module/index.web.js",
   "exports": {
     ".": {
+      "browser": {
+        "types": "./lib/typescript/module/src/index.web.d.ts",
+        "default": "./lib/module/index.web.js"
+      },
       "import": {
         "types": "./lib/typescript/module/src/index.d.ts",
         "default": "./lib/module/index.js"
@@ -65,11 +70,12 @@
   },
   "devDependencies": {
     "@commitlint/config-conventional": "^17.0.2",
-    "@evilmartians/lefthook": "^1.5.0",
     "@react-native/eslint-config": "^0.73.1",
     "@release-it/conventional-changelog": "^5.0.0",
     "@types/jest": "^29.5.5",
+    "@types/node": "^20.0.0",
     "@types/react": "^18.2.44",
+    "fake-indexeddb": "^6.0.0",
     "commitlint": "^17.0.2",
     "del-cli": "^5.1.0",
     "eslint": "^8.51.0",
@@ -90,13 +96,6 @@
   "peerDependencies": {
     "react": "*",
     "react-native": "*"
-  },
-  "jest": {
-    "preset": "react-native",
-    "modulePathIgnorePatterns": [
-      "<rootDir>/example/node_modules",
-      "<rootDir>/lib/"
-    ]
   },
   "commitlint": {
     "extends": [

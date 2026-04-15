@@ -1,0 +1,14 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "paths": {
+      "@santinela-react/encrypted-storage": [
+        "./src/index.web"
+      ]
+    },
+    "lib": [
+      "ESNext",
+      "DOM"
+    ],
+  }
+}

@@ -31,7 +31,9 @@ export default class EncryptedStorage {
     cb?: StorageErrorCallback
   ): void | Promise<void> {
     if (cb) {
-      RNEncryptedStorage.setItem(key, value).then(cb).catch(cb);
+      RNEncryptedStorage.setItem(key, value)
+        .then(() => cb())
+        .catch((err: Error) => cb(err));
       return;
     }
 
@@ -55,7 +57,9 @@ export default class EncryptedStorage {
     cb?: StorageValueCallback
   ): void | Promise<string | null> {
     if (cb) {
-      RNEncryptedStorage.getItem(key).then(cb).catch(cb);
+      RNEncryptedStorage.getItem(key)
+        .then((value: string | null) => cb(undefined, value ?? undefined))
+        .catch((err: Error) => cb(err));
       return;
     }
 
@@ -79,7 +83,9 @@ export default class EncryptedStorage {
     cb?: StorageErrorCallback
   ): void | Promise<void> {
     if (cb) {
-      RNEncryptedStorage.removeItem(key).then(cb).catch(cb);
+      RNEncryptedStorage.removeItem(key)
+        .then(() => cb())
+        .catch((err: Error) => cb(err));
       return;
     }
 
@@ -98,7 +104,9 @@ export default class EncryptedStorage {
   static clear(cb: StorageErrorCallback): void;
   static clear(cb?: StorageErrorCallback): void | Promise<void> {
     if (cb) {
-      RNEncryptedStorage.clear().then(cb).catch(cb);
+      RNEncryptedStorage.clear()
+        .then(() => cb())
+        .catch((err: Error) => cb(err));
       return;
     }
 
