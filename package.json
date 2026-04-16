@@ -1,10 +1,11 @@
 {
   "name": "@santinela-react/encrypted-storage",
-  "version": "5.0.0",
+  "version": "5.0.1",
   "description": "A React Native wrapper over SharedPreferences and Keychain to provide a secure alternative to Async Storage",
   "source": "./src/index.ts",
   "main": "./lib/commonjs/index.js",
   "module": "./lib/module/index.js",
+  "react-native": "./src/index.ts",
   "browser": "./lib/module/index.web.js",
   "exports": {
     ".": {
